@@ -1,0 +1,15 @@
+proxies:
+  - name: "Fiddler HTTP Proxy"
+    type: http
+    server: 127.0.0.1
+    port: 8888
+
+proxy-groups:
+  - name: "GLOBAL"
+    type: select
+    proxies:
+      - "Fiddler HTTP Proxy"
+      - "DIRECT"
+
+rules:
+  - MATCH,GLOBAL
